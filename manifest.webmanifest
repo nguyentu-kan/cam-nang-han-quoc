@@ -1,7 +1,7 @@
 {
-  "name": "Cẩm nang Hàn Quốc KAN",
-  "short_name": "KAN Hàn Quốc",
-  "description": "Cẩm nang du học và làm việc Hàn Quốc của Khải Ân International",
+  "name": "Cẩm nang KAN",
+  "short_name": "Cẩm nang KAN",
+  "description": "Cẩm nang du học và làm việc theo thị trường của Khải Ân International",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
