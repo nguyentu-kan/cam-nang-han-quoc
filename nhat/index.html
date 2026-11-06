@@ -29,8 +29,10 @@ nav a:hover,nav a.on{background:#1d3550}
 nav a.on{box-shadow:inset 3px 0 0 var(--gold)}
 main{margin-left:224px;padding:36px;max-width:1000px}
 .hero{background:var(--navy);color:#fff;border-radius:22px;padding:40px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;right:-50px;top:50%;width:210px;height:210px;margin-top:-105px;border-radius:50%;background:var(--red)}
-.hero>div{position:relative;z-index:1}
+.hero{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+.map{flex:0 0 200px;width:200px;height:auto}
+.stats,.three{display:grid;gap:14px;margin:14px 0}.stats{grid-template-columns:repeat(4,1fr)}.three{grid-template-columns:repeat(3,1fr)}
+.stat b{font-size:26px;color:var(--red);margin:0}.stat span{font-size:14px;color:var(--mut)}
 .hero h1{margin:0 0 14px;font-size:42px;line-height:1.2}
 .hero p{margin:0 0 18px;max-width:560px;font-size:18px;color:#dbe6f0}
 .hero span{font-size:12px;letter-spacing:2px;color:#9fb4c8;font-weight:700}
@@ -64,14 +66,14 @@ summary{font-weight:700;cursor:pointer}
 @media(max-width:860px){
 nav{position:static;width:auto;display:flex;gap:4px;overflow-x:auto;padding:10px}
 nav b,nav small{display:none}nav a{white-space:nowrap}
-main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.hero:after{display:none}
+main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.stats,.three{grid-template-columns:1fr}.map{width:150px;flex-basis:150px}
 .grid,.two,.col2,.gl{grid-template-columns:1fr}dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:8px}}
 </style>
 </head>
 <body>
 <nav id="nav">
 <b>KAN</b><small>KHẢI ÂN INTERNATIONAL</small>
-<a href="#bat-dau">Bắt đầu</a><a href="#tu-ngu">Giải thích từ ngữ</a><a href="#so-sanh">So sánh các diện</a>
+<a href="#bat-dau">Bắt đầu</a><a href="#tu-ngu">Giải thích từ ngữ</a><a href="#nuoc-nhat">Nước Nhật</a><a href="#so-sanh">So sánh các diện</a>
 <a href="#du-hoc">Du học</a><a href="#lao-dong">Làm việc</a><a href="#quy-trinh">Quy trình</a>
 <a href="#chi-phi">Chi phí</a><a href="#hoi-dap">Hỏi đáp</a><a href="#lien-he">Liên hệ</a>
 </nav>
@@ -79,7 +81,7 @@ main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.hero:afte
 <section id="bat-dau">
 <div class="hero"><div><div class="kt">日本 · 留学 · 就労</div><h1>Du học và làm việc<br>tại Nhật Bản</h1>
 <p>Nhật Bản có nhiều hướng đi dành cho người học và người lao động: du học, thực tập sinh, kỹ năng đặc định, kỹ thuật viên và kỹ sư. Cẩm nang trình bày điều kiện, quy trình và chi phí do KAN áp dụng, giúp người đọc lựa chọn hướng đi phù hợp.</p>
-<span>CẨM NANG TƯ VẤN · KHẢI ÂN INTERNATIONAL</span></div></div>
+<span>CẨM NANG TƯ VẤN · KHẢI ÂN INTERNATIONAL</span></div><svg class="map" id="map" viewBox="0 0 230 300" role="img" aria-label="Bản đồ nước Nhật"></svg></div>
 <h2>Người đọc thuộc trường hợp nào? Vui lòng chọn một ô.</h2>
 <div class="grid">
 <a class="card" href="#du-hoc"><b>Từ 18 đến 32 tuổi, đã tốt nghiệp THPT, muốn đi học tiếng Nhật và học lên tại Nhật</b><em>Xem: Du học</em></a>
@@ -95,7 +97,26 @@ main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.hero:afte
 <section id="tu-ngu"><div class="k">ĐỌC TRƯỚC</div><h2>Giải thích từ ngữ</h2>
 <p class="note">Khi gặp từ chưa rõ trong cẩm nang, có thể tra cứu lại tại phần này.</p><div class="gl" id="gl"></div></section>
 
-<section id="so-sanh"><div class="k">PHẦN 1</div><h2>So sánh các diện đi Nhật</h2>
+<section id="nuoc-nhat"><div class="k">PHẦN 1</div><h2>Nhật Bản trong vài con số</h2>
+<p>Nhật Bản là một trong những thị trường nhận người học và người lao động Việt Nam lớn nhất. Người Việt là một trong những cộng đồng nước ngoài đông nhất tại đây.</p>
+<div class="stats">
+<div class="card stat"><b>~123 triệu</b><span>dân số, tập trung quanh Tokyo, Osaka và Nagoya</span></div>
+<div class="card stat"><b>681.100</b><span>người Việt đang sống tại Nhật (cuối năm 2025)</span></div>
+<div class="card stat"><b>+2 giờ</b><span>Nhật Bản sớm hơn Việt Nam 2 tiếng</span></div>
+<div class="card stat"><b>5–6 giờ</b><span>thời gian bay từ Việt Nam đến Tokyo</span></div></div>
+<div class="three">
+<div class="card"><h3>Việc làm</h3>Nhật Bản cần lao động ở nhiều ngành: điều dưỡng, xây dựng, nông nghiệp, thực phẩm, máy móc, ô tô, lái xe và các vị trí kỹ thuật dành cho người có bằng cao đẳng, đại học.</div>
+<div class="card"><h3>Học tập</h3>Trường Nhật ngữ nhận học viên theo 4 kỳ mỗi năm (tháng 1, 4, 7 và 10). Người học tiếng tối đa 2 năm, sau đó học lên theo trình độ.</div>
+<div class="card"><h3>Sinh sống</h3>Người lao động diện kỹ thuật viên và kỹ sư có mức lương tương đương người Nhật và được bảo lãnh người thân. Các diện khác có quyền lợi và giới hạn riêng.</div></div>
+<div class="box"><b>Tiếng Nhật quyết định lộ trình.</b> Mức N5 là yêu cầu để nhập học tiếng; N4 và N3 là yêu cầu phổ biến với diện Đặc định, kỹ thuật viên và kỹ sư. Người chưa có tiếng Nhật vẫn có thể được đào tạo trong thời gian chờ visa.</div>
+<div class="tw"><table>
+<tr><th>Thủ đô</th><td>Tokyo. Các thành phố lớn khác: Osaka, Nagoya, Fukuoka, Sapporo, Hiroshima</td></tr>
+<tr><th>Tiền tệ</th><td>Yên Nhật (JPY). Tỷ giá tham chiếu của KAN: 1 JPY = 170 đồng, quy đổi theo thời giá</td></tr>
+<tr><th>Ngôn ngữ</th><td>Tiếng Nhật. Đây là điều kiện quan trọng để học tập, làm việc và hòa nhập</td></tr>
+<tr><th>Múi giờ</th><td>Sớm hơn Việt Nam 2 tiếng</td></tr>
+</table></div></section>
+
+<section id="so-sanh"><div class="k">PHẦN 2</div><h2>So sánh các diện đi Nhật</h2>
 <div class="tw"><table>
 <tr><th>Diện</th><th>Thời hạn</th><th>Đối tượng</th></tr>
 <tr><td><a href="#du-hoc">Du học</a></td><td>Học tiếng tối đa 2 năm; sau đó học lên theo trình độ</td><td>Người đi học</td></tr>
@@ -105,14 +126,14 @@ main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.hero:afte
 <tr><td><a href="#ky-su">Kỹ sư</a></td><td>Không giới hạn thời hạn visa</td><td>Người có bằng cao đẳng, đại học</td></tr>
 </table></div></section>
 
-<section id="du-hoc"><div class="k">PHẦN 2</div><h2>Du học</h2><div id="g1"></div></section>
-<section id="lao-dong"><div class="k">PHẦN 3</div><h2>Làm việc</h2><div id="g2"></div></section>
-<section id="quy-trinh"><div class="k">PHẦN 4</div><h2>Quy trình từ khi đăng ký đến khi xuất cảnh</h2>
+<section id="du-hoc"><div class="k">PHẦN 3</div><h2>Du học</h2><div id="g1"></div></section>
+<section id="lao-dong"><div class="k">PHẦN 4</div><h2>Làm việc</h2><div id="g2"></div></section>
+<section id="quy-trinh"><div class="k">PHẦN 5</div><h2>Quy trình từ khi đăng ký đến khi xuất cảnh</h2>
 <p class="note">Quy trình chung dành cho các diện làm việc. Thời gian từng bước phụ thuộc vào đơn hàng, công ty tiếp nhận và cơ quan xét duyệt; tư vấn viên sẽ thông báo cụ thể cho từng hồ sơ.</p>
 <div class="prog" id="s0"></div>
 <p>Từ khi đăng ký đến khi bay, các diện Đặc định và Kỹ sư thường mất 4 đến 6 tháng hoặc 8 đến 12 tháng; thực tập sinh khoảng 6 đến 8 tháng.</p></section>
 
-<section id="chi-phi"><div class="k">PHẦN 5</div><h2>Chi phí</h2>
+<section id="chi-phi"><div class="k">PHẦN 6</div><h2>Chi phí</h2>
 <p class="note">Chi phí chia làm 3 lần: lần 1 khi nhập học, lần 2 khi đậu phỏng vấn, lần 3 khi có COE.</p>
 <h3>Kỹ sư</h3><div class="tw"><table id="c1"></table></div>
 <h3>Kỹ năng đặc định</h3><div class="tw"><table id="c2"></table></div>
@@ -122,7 +143,7 @@ main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.hero:afte
 <p class="note">Chi phí du học chia theo khoản và theo lịch của trường, không chia 3 lần. Các khoản bao gồm, chưa bao gồm và lịch thanh toán cần được xác nhận trong hợp đồng hoặc bảng chi phí chính thức trước khi học viên đăng ký. Khoản tính bằng USD được quy đổi theo thời giá.</p>
 </section>
 
-<section id="hoi-dap"><div class="k">PHẦN 6</div><h2>Hỏi đáp</h2>
+<section id="hoi-dap"><div class="k">PHẦN 7</div><h2>Hỏi đáp</h2>
 <details><summary>Người chưa biết tiếng Nhật nên tham khảo diện nào?</summary><p>Người từ 18 đến 32 tuổi, tốt nghiệp THPT có thể đi du học và học tiếng Nhật từ đầu (cần đạt N5 trước khi nhập học). Với diện làm việc, người học có thể theo thực tập sinh hoặc Đặc định đi mới; tiếng Nhật được đào tạo trong thời gian chờ visa.</p></details>
 <details><summary>Người đã từng đến Nhật có thể quay lại làm việc không?</summary><p>Có thể, theo diện Đặc định số 1 đi lại, dành cho người từ 20 đến 37 tuổi. Nếu làm đúng ngành nghề từng học hoặc từng làm, người học có thể dùng lại hồ sơ cũ. Nếu làm trái ngành, người học cần chứng chỉ tiếng Nhật N4 và chứng chỉ nghề phù hợp.</p></details>
 <details><summary>Làm việc theo diện Đặc định có thể chuyển việc không?</summary><p>Có thể, khi người lao động đã thỏa thuận xong với công ty tiếp nhận. Sau 3 năm làm việc, người lao động có thể thi để lên Đặc định số 2.</p></details>
@@ -130,7 +151,7 @@ main{margin:0;padding:16px}.hero{padding:24px}.hero h1{font-size:30px}.hero:afte
 <details><summary>Có thể bảo đảm kết quả phỏng vấn hoặc xin visa hay không?</summary><p>Không ai có thể bảo đảm tuyệt đối. Kết quả phỏng vấn do công ty tiếp nhận quyết định, kết quả cấp COE và visa do cơ quan có thẩm quyền của Nhật Bản quyết định.</p></details>
 </section>
 
-<section id="lien-he"><div class="k">PHẦN 7</div><h2>Liên hệ và nguồn kiểm chứng</h2>
+<section id="lien-he"><div class="k">PHẦN 8</div><h2>Liên hệ và nguồn kiểm chứng</h2>
 <div class="two"><div class="card"><h3>Trang chính thức</h3><ul>
 <li><a href="https://www.moj.go.jp/isa/" target="_blank" rel="noopener">www.moj.go.jp/isa</a>: Cục Quản lý xuất nhập cảnh và lưu trú Nhật Bản, nơi xét cấp COE</li>
 <li><a href="https://www.vn.emb-japan.go.jp" target="_blank" rel="noopener">www.vn.emb-japan.go.jp</a>: Đại sứ quán Nhật Bản tại Việt Nam, thông tin về visa</li></ul></div>
@@ -162,6 +183,14 @@ $('c2').innerHTML='<tr><th>Chương trình</th><th>Ghi chú</th>'+H+'</tr>'+[["T
 $('c3').innerHTML='<tr><th>Chương trình</th><th>Ghi chú</th>'+H+'</tr>'+[["Thực tập sinh: công xưởng","1.500.000 đ chi phí cơ sở vật chất",116.5,10,60,46.5],["Thực tập sinh: mộc, thủy sản","1.500.000 đ chi phí cơ sở vật chất",96.5,10,60,26.5],["Thực tập sinh: xây dựng","1.500.000 đ chi phí cơ sở vật chất",86.5,10,50,26.5]].map(row).join('');
 const f=n=>n.toLocaleString('vi-VN')+' đ';
 $('c4').innerHTML='<tr><th>Khoản mục</th><th>Số tiền</th><th>Ghi chú</th></tr>'+[["Học phí 1 năm trường Nhật ngữ",144500000,"850.000 JPY, tỷ giá tham chiếu 170"],["Phí dịch vụ",15000000,""],["Chứng thực bằng cấp, dịch thuật, gửi hồ sơ",5000000,"Khi đăng ký"],["Đào tạo tiếng Nhật và chỗ ở (5 đến 8 tháng)",15000000,"Trong vòng 2 tuần khi nhập học"],["Phí xin visa",700000,""],["Chứng minh sổ tiết kiệm",6000000,"Chỉ áp dụng khi gia đình không tự chứng minh"],["Vé máy bay","Dự kiến 6.000.000 đ","Chưa xác nhận"]].map(r=>`<tr><td>${r[0]}</td><td class="n">${typeof r[1]==='number'?f(r[1]):r[1]}</td><td>${r[2]}</td></tr>`).join('');
+(function(){const isl=[
+[[140.9,41.5],[140.35,41.25],[139.9,40.6],[139.8,39.7],[139.8,38.9],[139.0,37.9],[137.3,37.5],[137.2,36.8],[136.0,35.65],[135.2,35.55],[134.2,35.55],[133.0,35.55],[131.4,34.4],[130.9,34.0],[131.8,33.95],[132.4,34.2],[133.9,34.55],[135.2,34.65],[135.0,34.2],[135.75,33.43],[136.9,34.3],[136.8,34.7],[137.0,34.6],[137.7,34.65],[138.2,34.6],[138.85,34.65],[139.15,35.25],[139.65,35.15],[139.85,34.9],[140.0,35.3],[140.85,35.7],[140.6,36.4],[141.0,37.0],[141.0,38.25],[141.5,38.3],[141.9,39.5],[142.0,40.0],[141.9,40.4],[141.5,40.5],[141.45,41.2],[141.2,41.4]],
+[[141.95,45.5],[142.9,44.7],[144.3,44.0],[145.2,44.3],[145.8,43.35],[144.4,42.95],[143.3,42.0],[142.0,42.45],[141.0,42.3],[140.7,41.8],[140.1,41.45],[140.1,42.5],[140.6,43.2],[141.2,43.3],[141.5,44.2],[141.65,45.0],[141.7,45.45]],
+[[130.95,33.95],[131.9,33.6],[131.7,32.7],[131.4,31.4],[130.65,31.0],[130.2,31.3],[130.2,32.1],[130.15,32.7],[129.8,33.2],[129.7,33.5],[130.4,33.6]],
+[[132.7,34.0],[133.7,34.3],[134.6,34.2],[134.7,33.8],[134.2,33.25],[133.5,33.4],[133.0,32.75],[132.5,33.3],[132.1,33.5]]];
+const X=o=>((o-129.3)*11.8+10).toFixed(1),Y=a=>((45.8-a)*15.5+10).toFixed(1);
+const c=[['Tokyo',139.7,35.7,1],['Osaka',135.5,34.7],['Nagoya',136.9,35.2],['Fukuoka',130.4,33.6],['Sapporo',141.35,43.06],['Hiroshima',132.5,34.4]];
+document.getElementById('map').innerHTML=isl.map(p=>'<polygon points="'+p.map(q=>X(q[0])+','+Y(q[1])).join(' ')+'" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-linejoin="round"/>').join('')+c.map(q=>`<circle cx="${X(q[1])}" cy="${Y(q[2])}" r="3" fill="#f2b134"/>`+(q[3]?`<circle cx="${X(q[1])}" cy="${Y(q[2])}" r="7" fill="none" stroke="#f2b134"/>`:'')+`<text x="${+X(q[1])-(q[0]==='Tokyo'?0:0)+9}" y="${+Y(q[2])+3}" font-size="10" fill="#dbe6f0" font-family="sans-serif">${q[0]}</text>`).join('');})();
 const ls=[...document.querySelectorAll('#nav a')],ss=ls.map(a=>document.querySelector(a.getAttribute('href')));
 addEventListener('scroll',()=>{let i=0;ss.forEach((s,j)=>{if(s.getBoundingClientRect().top<120)i=j});ls.forEach((a,j)=>a.classList.toggle('on',j==i))});
 </script>
